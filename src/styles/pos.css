@@ -281,3 +281,18 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+@media (max-width: 1024px) {
+  .pos-cart-section {
+    width: 360px;
+    min-width: 360px;
+  }
+
+  .pos-title {
+    font-size: 20px;
+  }
+
+  .pos-catalog-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
