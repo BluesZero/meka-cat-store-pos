@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* index.css */
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  background-color: #1e1f26; /* igual al bg-slate-900 o el dark de tu app */
+  height: 100%;
+  width: 100%;
+}
+
+/* index.css */
+html,
+body,
+#root {
+  height: 100%;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&display=swap');
+
+body {
+  font-family: 'Orbitron', sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #1e1f26;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #30ff56;
+  border-radius: 4px;
+}
+
+/* Fuerza texto blanco dentro del carrito */
+.pos-cart * {
+  color: white !important;
+}
+

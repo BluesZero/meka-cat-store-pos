@@ -1,0 +1,38 @@
+.pos-cart {
+  padding: 16px;
+  flex: 1;
+  overflow-y: auto;
+  color: white;
+  scrollbar-width: thin;
+  scrollbar-color: #ff3881 transparent;
+}
+
+.pos-cart::-webkit-scrollbar {
+  width: 8px;
+}
+
+.pos-cart::-webkit-scrollbar-thumb {
+  background-color: #ff3881;
+  border-radius: 4px;
+}
+
+.pos-cart h2 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+}
+
+.pos-cart p {
+  font-size: 0.875rem;
+  color: #9ca3af;
+}
+
+.cart-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}

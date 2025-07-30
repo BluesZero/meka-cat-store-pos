@@ -1,0 +1,46 @@
+.pos-catalog {
+  padding: 16px;
+  width: 100%;
+  flex: 1;
+  min-width: 0;
+}
+
+.pos-catalog-back {
+  position: absolute;
+  top: 12px;
+  right: 20px;
+  background-color: #2d2e38;
+  color: white;
+  padding: 6px 14px;
+  font-size: 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.2s ease;
+  z-index: 10;
+}
+
+.pos-catalog-back:hover {
+  background-color: #383a45;
+}
+
+.pos-catalog-title {
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.pos-catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  align-items: start;
+  padding-bottom: 40px;
+}
+
+.pos-catalog-grid.products {
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+}
