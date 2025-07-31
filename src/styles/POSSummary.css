@@ -3,53 +3,85 @@
   border-radius: 12px;
   padding: 20px;
   color: white;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
 .pos-summary-title {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
-  border-bottom: 1px solid #444;
-  padding-bottom: 8px;
+  text-align: left;
+  color: #ffffff;
 }
 
 .pos-summary-details {
   font-size: 14px;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
 }
 
 .pos-summary-row {
   display: flex;
   justify-content: space-between;
-  color: #cccccc;
 }
 
 .pos-summary-total {
   display: flex;
   justify-content: space-between;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
+  color: #8fff8f;
   margin-top: 8px;
+}
+
+.pos-summary-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pos-summary-controls label {
+  font-size: 13px;
+  color: #ccc;
+  display: flex;
+  flex-direction: column;
+}
+
+.pos-summary-controls select,
+.pos-summary-controls input {
+  margin-top: 4px;
+  background-color: #1e1f26;
   color: white;
+  border: 1px solid #444;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 14px;
 }
 
 .pos-summary-button {
-  width: 100%;
   background-color: #ff3881;
   color: white;
   font-weight: bold;
-  padding: 10px;
-  border-radius: 8px;
   border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 15px;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: background 0.2s ease;
 }
 
 .pos-summary-button:hover {
-  background-color: #ff6fa1;
+  background-color: #ff5694;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.pos-summary {
+  animation: fadeIn 0.3s ease-out;
 }

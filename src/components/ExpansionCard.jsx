@@ -9,7 +9,7 @@ export default function ExpansionCard({ expansion, onClick }) {
       className="pos-expansion-card"
     >
       {/* Imagen */}
-      <div className="pos-expansion-image">
+      <div className="pos-franchise-image">
         <img src={expansion.image} alt={expansion.name} />
       </div>
 

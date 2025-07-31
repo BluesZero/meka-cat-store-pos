@@ -1,83 +1,71 @@
 .cart-item-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   background-color: #2d2e38;
   border-radius: 12px;
-  padding: 16px;
-  display: flex;
-  gap: 16px;
-  align-items: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-}
-
-.cart-item-image {
-  width: 80px;
-  height: 80px;
-  background-color: black;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 .cart-item-image img {
-  max-height: 80%;
-  max-width: 80%;
+  width: 60px;
+  height: 60px;
   object-fit: contain;
+  border-radius: 6px;
+  background-color: #00000000;
 }
 
-.cart-item-info {
+.cart-item-details {
   flex: 1;
   color: white;
+  min-width: 0;
 }
 
-.cart-item-info h3 {
-  font-size: 0.9rem;
-  font-weight: 600;
+.cart-item-name {
+  font-size: 0.95rem;
+  font-weight: bold;
   margin: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  word-break: break-word;
 }
 
-.cart-item-info p {
-  font-size: 0.75rem;
-  margin: 2px 0;
+.cart-item-price,
+.cart-item-total {
+  font-size: 0.85rem;
+  margin: 4px 0;
+  color: #ccc;
 }
 
 .cart-item-controls {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
 }
 
 .cart-item-controls button {
-  padding: 2px 8px;
-  color: white;
   border: none;
-  border-radius: 4px;
-  font-size: 0.9rem;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-weight: bold;
   cursor: pointer;
+  color: white;
 }
 
 .cart-item-controls .add {
-  background-color: #16a34a;
-}
-.cart-item-controls .add:hover {
-  background-color: #15803d;
+  background-color: #4caf50;
 }
 
 .cart-item-controls .remove {
-  background-color: #d97706;
-}
-.cart-item-controls .remove:hover {
-  background-color: #b45309;
+  background-color: #ff1d7f;
 }
 
 .cart-item-controls .delete {
-  background-color: #dc2626;
-  font-size: 0.75rem;
-  margin-top: 4px;
+  background-color: #f44336;
 }
-.cart-item-controls .delete:hover {
-  background-color: #b91c1c;
+
+.cart-item-controls span {
+  color: white;
+  font-size: 0.9rem;
+  min-width: 18px;
+  text-align: center;
 }

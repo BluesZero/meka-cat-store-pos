@@ -1,0 +1,61 @@
+/* SalesList.css */
+
+.sales-list {
+  padding: 30px;
+  background-color: #1e1f26;
+  color: #f2f2f2;
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.sales-list h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #fff;
+  border-bottom: 2px solid #333;
+  padding-bottom: 10px;
+}
+
+.sales-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sales-list li {
+  background-color: #2b2d36;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.sales-list li p {
+  margin: 0;
+  font-size: 1rem;
+  color: #ddd;
+  word-break: break-word;
+}
+
+.sales-list li strong {
+  color: #8fff8f;
+}
+
+.sales-list button {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.sales-list button:hover {
+  background-color: #e63939;
+}
