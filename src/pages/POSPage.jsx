@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { supabase } from "../lib/supabase";
 import { v4 as uuidv4 } from "uuid";
 
@@ -15,9 +15,19 @@ import "../styles/pos.css";
 export default function POSPage() {
   const [cart, setCart] = useState([]);
   const [showCart, setShowCart] = useState(true);
+  const [showSummary, setShowSummary] = useState(true);
   const [saleInfo, setSaleInfo] = useState(null);
   const [showAddProductModal, setShowAddProductModal] = useState(false);
   const [showSalesModal, setShowSalesModal] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setShowSummary(window.innerWidth >= 768); // ocultar resumen en pantallas pequeñas
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const handleAddProduct = (product) => {
     const existing = cart.find((p) => p.id === product.id);
@@ -160,9 +170,24 @@ export default function POSPage() {
                 onUpdateQuantity={handleUpdateQuantity}
               />
             </div>
-            <div className="pos-summary-wrapper">
-              <POSSummary cart={cart} onCheckout={handleCheckout} />
+
+            {/* Botón toggle para mostrar/ocultar el resumen */}
+            <div style={{ padding: "10px" }}>
+              <button
+                
+                onClick={() => setShowSummary(!showSummary)}
+                style={{ width: "30px", fontSize: "10px" }}
+              >
+                {showSummary ? "▼" : "▲"}
+              </button>
             </div>
+
+            {/* POSSummary visible solo si está activo */}
+            {showSummary && (
+              <div className="pos-summary-wrapper">
+                <POSSummary cart={cart} onCheckout={handleCheckout} />
+              </div>
+            )}
           </div>
         )}
 

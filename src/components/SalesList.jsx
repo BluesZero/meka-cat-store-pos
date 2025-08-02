@@ -1,15 +1,13 @@
-// SalesList.jsx
 import React, { useEffect, useState } from "react";
 import { supabase } from "../lib/supabase";
-
 import "../styles/SalesList.css";
 
-
-function SalesList() {
+function SalesList({ onClose }) {
   const [sales, setSales] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const fetchSales = async () => {
+    setLoading(true);
     const { data, error } = await supabase
       .from("sales")
       .select("*")
@@ -29,7 +27,7 @@ function SalesList() {
 
     const { error } = await supabase
       .from("sales")
-      .update({ status: "cancelled" })
+      .delete()
       .eq("id", saleId);
 
     if (!error) {
@@ -40,7 +38,13 @@ function SalesList() {
 
   return (
     <div className="sales-list">
-      <h2>Ventas registradas</h2>
+      <div className="sales-header">
+        <h2>Ventas registradas</h2>
+        {onClose && (
+          <button onClick={onClose} className="sales-close-btn">✖</button>
+        )}
+      </div>
+
       {loading ? (
         <p>Cargando...</p>
       ) : (
@@ -50,8 +54,22 @@ function SalesList() {
               <p>
                 🧾 <strong>{new Date(sale.date).toLocaleString()}</strong> — Total: ${sale.total} — {sale.payment_method}
               </p>
+
+              {sale.items && Array.isArray(sale.items) && (
+                <ul style={{ marginLeft: "16px", marginTop: "6px" }}>
+                  {sale.items.map((item, idx) => (
+                    <li key={idx} style={{ color: "#ccc" }}>
+                      • {item.name} × {item.quantity} — ${item.price}
+                    </li>
+                  ))}
+                </ul>
+              )}
+
               {sale.status !== "cancelled" && (
                 <button onClick={() => handleCancel(sale.id)}>Cancelar</button>
+              )}
+              {sale.status === "cancelled" && (
+                <p style={{ color: "tomato", marginTop: "4px" }}>🚫 Venta cancelada</p>
               )}
             </li>
           ))}
